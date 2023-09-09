@@ -26,7 +26,6 @@ def create_certaficat(name, field):
     field_ = field.replace("/", "-")
 
     #creating new html file
-    os.system(f"touch {name}-{field_}.html")
     file_path = f"{name}-{field_}.html"
     with open(file_path, "w") as file:
         with open("certaficat.html", "r") as template_file:
@@ -59,8 +58,10 @@ def html_to_image(name, field):
     options = webdriver.FirefoxOptions()
     driver = webdriver.Firefox(options=options)
 
+    full_path = os.path.abspath(f"{name}-{field}.html")
+    
     #this could be changed as well
-    driver.get(f"file:///home/isifoo/Projects/Others/certaficates_sender/{name}-{field}.html")
+    driver.get(f"file:///{full_path}")
 
     #the class name can be changed too
     elements = driver.find_elements(By.CLASS_NAME, 'gradient-container')
