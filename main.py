@@ -60,12 +60,12 @@ def send_emails(name, field, email):
     encoders.encode_base64(part)
     part.add_header(
     "Content-Disposition",
-    f"attachment; filename= f'{html}'",
+    f"attachment; filename= '{html}'",
     )
 
     message = MIMEMultipart()
     message['Subject'] = "Summer School Certaficats"
-    message['From'] = "salmisifofedz@gmail.com"
+    message['From'] = send_emails
     message['To'] = email
     html_part = MIMEText("your certaficat is ready")
     message.attach(html_part)
