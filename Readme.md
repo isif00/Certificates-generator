@@ -9,8 +9,3 @@
 
 ## requirements :
     there is some requirements that u need to install, u can do that simply by running `pip install -r requirements.txt`
-
-## Important note:
-    I am using `touch` to create fiels cause I'm using a unix based system, if u have another os, feel free to open a PR
-
-
